@@ -2,7 +2,7 @@
 
 Steps to run index.html
 
-go to http://craraulsalazar.github.io/Neighborhood-Map-Project/index.html
+go to http://craraulsalazar.github.io/Neighborhood-Map-Async/index.html
 
 App Functionality
 
