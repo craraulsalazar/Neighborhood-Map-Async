@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Neighborhood Map</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/simple-sidebar.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <style>
+    
+      #map {
+        height: 1000px;
+        position: relative;
+        top: 0px;
+        left: 10px;
+      }
+
+      .overlap {
+        position:absolute;
+        top: 10px;
+        left: 10%;
+        width: 25%;
+        background-color: white;
+        padding: 5px;
+      }
+      .mapwrapper {position:relative;}
+
+    </style>
+
+</head>
+
+<body>
+
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+
+            <!--    
+            <ul class="sidebar-nav">
+                <li class="sidebar-brand">
+                    <a href="#">
+                        Start Bootstrap
+                    </a>
+                </li>
+                <li>
+                    <a href="#">Dashboard</a>
+                </li>
+                <li>
+                    <a href="#">Shortcuts</a>
+                </li>
+                <li>
+                    <a href="#">Overview</a>
+                </li>
+                <li>
+                    <a href="#">Events</a>
+                </li>
+                <li>
+                    <a href="#">About</a>
+                </li>
+                <li>
+                    <a href="#">Services</a>
+                </li>
+                <li>
+                    <a href="#">Contact</a>
+                </li>
+            </ul>
+        -->
+
+            <form class="navbar-form">
+                <div class="form-group" style="width: 100%">
+
+                   <div class="input-group">
+                      <div class="input-group-btn">
+                         <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-chevron-down"></span></button>
+
+                     </div>
+
+                   <input type="search" class="form-control" placeholder="What are searching for?" name="q" data-bind="value: query, valueUpdate: 'keyup'">
+
+                   <span class="input-group-addon"><span class="glyphicon glyphicon-search"></span> </span>
+                </div>
+               </div>
+           </form>
+        
+           
+            <ul class="list-group" data-bind="template: {name:'location', foreach:locations}">
+            </ul>
+
+            <script type="text/html" id="location">
+               <li class="list-group-item" data-bind="click: $parent.loadlocationdetails, css:{'highlightRed': $parent.currentlocationselected() === name}">
+                    <strong data-bind="text: $data.name"></strong>
+                    
+               </li>
+            </script>
+
+        </div>
+        <!-- /#sidebar-wrapper -->
+
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+                        
+                          <div class="mapwrapper">
+                             <div id="map"></div>
+                             <div class="overlap">
+                            
+                                <h3>Click toggle to collapse menu</h3>
+                                
+                                <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Toggle Menu</a>
+                             </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /#page-content-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Menu Toggle Script -->
+    <script>
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
+    </script>
+
+     <script src="https://maps.googleapis.com/maps/api/js?v=3&sensor=false&callback=initMap"
+        async defer>
+     </script>
+
+     <script src="https://ajax.aspnetcdn.com/ajax/knockout/knockout-3.1.0.js"></script>
+
+     <script src="js/script.js"></script>
+
+
+</body>
+
+</html>
