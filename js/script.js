@@ -271,11 +271,20 @@ function LoadFourSquareDetails(place, itemclickedfromlist)
         }
     ).fail(
         function(data){
-            //show alert in case internet is down
+            
+            //show alert in case foursquare is down
+
+          var errmsg = document.getElementsByClassName('alert-danger');
+          
+              
+          if (errmsg.length === 0) {
+            
+          
             var alertDiv = document.createElement('div');
-            alertDiv.text = 'Unable to call API - No Internet Available';
+            alertDiv.innerHTML = 'Unable to call Foursquare API';
             alertDiv.className = 'alert alert-danger';
-            document.getElementsByTagName('body')[0].appendChild(alertDiv);
+            document.getElementById('errmsg').appendChild(alertDiv);
+          }
             
         }
     );
