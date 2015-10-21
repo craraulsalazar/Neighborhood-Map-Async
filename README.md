@@ -12,7 +12,7 @@ The application consists of a search bar at the top, a listview with my favorite
 
 Search Bar: Filters both locations in the listview and in the map
 
-Listview: Show locations that have been filter, additionally clicking/pushing the location button will activate it's associated marker and display a set of pictures from foursquare
+Listview: Show locations that have been filter, additionally clicking/pushing the location button will activate it's associated marker and display a picture from foursquare
 
 Map: Will display a marker of the specific location selected and will display information about it. Marker will be animated too.
 
