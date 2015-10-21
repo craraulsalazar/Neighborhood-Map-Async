@@ -18,6 +18,5 @@ Map: Will display a marker of the specific location selected and will display in
 
 a toggle button is added at the top of the map whenever site is loaded in a mobile device, so users can see entire map or both.
 
-Error handling. if the internet is down or the libraries are not loaded properly. an error message will be displayed. note: Chrome offline testing will not show the customs errors. I have to purposely add the incorrect foursquare API to show errors.
-
+Error handling. if fourquare api call is tampered and not loaded properly. an error message will be displayed. 
 Responsive. The site is also responsive. tested with multiple Samsungs, Microsoft and Apple phones and tables.
