@@ -22,4 +22,4 @@ This application will be using foursquare API.
 Responsive. The site is also responsive. tested with multiple Samsungs, Microsoft and Apple phones and tables.
 
 7. note on Chrome device simulator testing.
-   I tested in all devices and all markers show in the center. but sometimes the simulators have to be force to refreshed. 
+   I tested in all devices and all markers show in the center. but sometimes the simulators don't fire the window.resize event and you have to refresh the browser. 
