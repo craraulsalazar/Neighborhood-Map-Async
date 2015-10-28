@@ -136,3 +136,11 @@ ul > li:hover {
         margin-right: 0;
     }
 }
+
+#map {
+
+    height: 1000px;
+    position: relative;
+    top:0px;
+    left: 10px;
+}
