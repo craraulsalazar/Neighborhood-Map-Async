@@ -229,10 +229,13 @@ function positionMarkersInMap() {
 
   //resize map height
   var h = $(window).height(),
+    w = $(window).width(),
     offsetTop = 60;
 
   $('#map').css('height', (h - offsetTop));
+  $('#map').css('width', w);
 
+  google.maps.event.trigger(map, "resize");
 
   var bounds = new google.maps.LatLngBounds();
   for (var i2 = 0; i2 < markers.length; i2++) {
@@ -249,10 +252,11 @@ function positionMarkersInMap() {
 
   // set a minimum zoom
   // if you got only 1 marker or all markers are on the same address map will be zoomed too much.
+
   if (map.getZoom() > 15) {
     map.setZoom(15);
-
   }
+
 
 }
 
